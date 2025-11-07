@@ -1,0 +1,145 @@
+-- SQL Server Instance: smg-sql01
+IF (@@SERVERNAME <> 'smg-dsdev05')
+BEGIN
+PRINT 'Invalid SQL Server Connection'
+RETURN
+END
+
+USE [CommitteePayroll];
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'JvAndHoldingUserAndRole' AND TABLE_SCHEMA = 'dbo')
+   DROP TABLE [dbo].[JvAndHoldingUserAndRole];
+GO
+/* -----------------------------------------------------------------------------------------------------------
+   Table Name  :  JvAndHoldingUserAndRole
+   Business Analyis:
+   Project/Process :   
+   Description     :  The Users Authorized to use this system.
+                        
+   Author          :   Philip Morrison
+   Create Date     :   11/7/2025 
+
+   ***********************************************************************************************************
+   **         Change History                                                                                **
+   ***********************************************************************************************************
+
+   Date       Version    Author             Description
+   --------   --------   -----------        ------------
+   11/7/2025  1.01.001   Philip Morrison    Created
+*/ -----------------------------------------------------------------------------------------------------------                                   
+
+
+CREATE TABLE [dbo].[JvAndHoldingUserAndRole](
+    [JvAndHoldingUserAndRoleID] [int] IDENTITY ( 1, 1 ) NOT NULL
+     ,[UserNetworkID] [varchar] (20) NOT NULL
+	 ,[UserRoleName] [varchar] (20) NOT NULL	
+ CONSTRAINT [pk_JvAndHoldingUserAndRole] PRIMARY KEY CLUSTERED 
+(
+	[JvAndHoldingUserAndRoleID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+-- STEP 001 of 004 Kelly Scott as PayrollAdmin
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [dbo].[JvAndHoldingUserAndRole]
+(
+  [UserNetworkID]
+  ,[UserRoleName]
+)
+VALUES
+(
+  'kscott'
+  ,'PayrollAdmin'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 002 of 004 Simona as Approver
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [dbo].[JvAndHoldingUserAndRole]
+(
+  [UserNetworkID]
+  ,[UserRoleName]
+)
+VALUES
+(
+  'snira'
+  ,'Approver'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 003 of 004 pwmorrison as SuperUser
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [dbo].[JvAndHoldingUserAndRole]
+(
+  [UserNetworkID]
+  ,[UserRoleName]
+)
+VALUES
+(
+  'pwmorrison'
+  ,'SuperUser'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+
+-- STEP 004 of 004 jmcmahan as SuperUser
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [dbo].[JvAndHoldingUserAndRole]
+(
+  [UserNetworkID]
+  ,[UserRoleName]
+)
+VALUES
+(
+  'jmcmahan'
+  ,'SuperUser'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
