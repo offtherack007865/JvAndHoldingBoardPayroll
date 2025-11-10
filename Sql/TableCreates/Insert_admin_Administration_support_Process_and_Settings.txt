@@ -135,8 +135,11 @@ INSERT INTO [support].[Setting]
            ,''
            ,'smgapplications@summithealthcare'
            ,1);
-
-
--- COMMIT
-
--- ROLLBACK
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END

@@ -6,11 +6,11 @@ RETURN
 END
 
 USE [CommitteePayroll];
-IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'JvAndHoldingUserAndRole' AND TABLE_SCHEMA = 'dbo')
-   DROP TABLE [dbo].[JvAndHoldingUserAndRole];
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'UserAndRole' AND TABLE_SCHEMA = 'payroll_jvhold')
+   DROP TABLE [payroll_jvhold].[UserAndRole];
 GO
 /* -----------------------------------------------------------------------------------------------------------
-   Table Name  :  JvAndHoldingUserAndRole
+   Table Name  :  UserAndRole
    Business Analyis:
    Project/Process :   
    Description     :  The Users Authorized to use this system.
@@ -28,23 +28,25 @@ GO
 */ -----------------------------------------------------------------------------------------------------------                                   
 
 
-CREATE TABLE [dbo].[JvAndHoldingUserAndRole](
-    [JvAndHoldingUserAndRoleID] [int] IDENTITY ( 1, 1 ) NOT NULL
+CREATE TABLE [payroll_jvhold].[UserAndRole](
+    [UserAndRoleID] [int] IDENTITY ( 1, 1 ) NOT NULL
      ,[UserNetworkID] [varchar] (20) NOT NULL
 	 ,[UserRoleName] [varchar] (20) NOT NULL	
- CONSTRAINT [pk_JvAndHoldingUserAndRole] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [pk_payroll_jvholdUserAndRole] PRIMARY KEY CLUSTERED 
 (
-	[JvAndHoldingUserAndRoleID] ASC
+	[UserAndRoleID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
 -- STEP 001 of 004 Kelly Scott as PayrollAdmin
 SELECT 1;
 -- 1 record 
 
 BEGIN TRANSACTION;
 
-INSERT INTO [dbo].[JvAndHoldingUserAndRole]
+INSERT INTO [payroll_jvhold].[UserAndRole]
 (
   [UserNetworkID]
   ,[UserRoleName]
@@ -70,7 +72,7 @@ SELECT 1;
 
 BEGIN TRANSACTION;
 
-INSERT INTO [dbo].[JvAndHoldingUserAndRole]
+INSERT INTO [payroll_jvhold].[UserAndRole]
 (
   [UserNetworkID]
   ,[UserRoleName]
@@ -96,7 +98,7 @@ SELECT 1;
 
 BEGIN TRANSACTION;
 
-INSERT INTO [dbo].[JvAndHoldingUserAndRole]
+INSERT INTO [payroll_jvhold].[UserAndRole]
 (
   [UserNetworkID]
   ,[UserRoleName]
@@ -123,7 +125,7 @@ SELECT 1;
 
 BEGIN TRANSACTION;
 
-INSERT INTO [dbo].[JvAndHoldingUserAndRole]
+INSERT INTO [payroll_jvhold].[UserAndRole]
 (
   [UserNetworkID]
   ,[UserRoleName]

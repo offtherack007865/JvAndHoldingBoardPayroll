@@ -1,0 +1,283 @@
+-- SQL Server Instance: smg-sql01
+IF (@@SERVERNAME <> 'smg-dsdev05')
+BEGIN
+PRINT 'Invalid SQL Server Connection'
+RETURN
+END
+
+USE [CommitteePayroll];
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'BoardMemberContactInfo' AND TABLE_SCHEMA = 'payroll_jvhold')
+   DROP TABLE [payroll_jvhold].[BoardMemberContactInfo];
+GO
+/* -----------------------------------------------------------------------------------------------------------
+   Table Name  :  BoardMemberContactInfo
+   Business Analyis:
+   Project/Process :   
+   Description     :  The Contact Info of Board Members assigned to the JV or the Holding board.
+                        
+   Author          :   Philip Morrison
+   Create Date     :   11/10/2025 
+
+   ***********************************************************************************************************
+   **         Change History                                                                                **
+   ***********************************************************************************************************
+
+   Date       Version    Author             Description
+   --------   --------   -----------        ------------
+   11/10/2025  1.01.001   Philip Morrison    Created
+*/ -----------------------------------------------------------------------------------------------------------                                   
+
+CREATE TABLE [payroll_jvhold].[BoardMemberContactInfo](
+
+    [BoardMemberContactInfoID] [int] IDENTITY ( 1, 1 ) NOT NULL
+     ,[FirstName] [varchar] (100) NOT NULL
+	 ,[LastName] [varchar] (100) NOT NULL
+     ,[Degree] [varchar] (100) NOT NULL
+     ,[EmailAddress] [varchar] (300) NOT NULL
+ CONSTRAINT [pk_payroll_jvholdBoardMemberContactInfo] PRIMARY KEY CLUSTERED 
+(
+	[BoardMemberContactInfoID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+-- STEP 001 of 008 Robert, Schumann, Dr., rschumann@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Robert'
+  ,'Schumann'
+  ,'Dr.'
+  ,'rschumann@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 002 of 008 Amy, Beach, Dr., abeach@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Amy'
+  ,'Beach'
+  ,'Dr.'
+  ,'abeach@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 003 of 008 Johann Sebastien, Bach, <empty string>, jsbach@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Johann Sebastien'
+  ,'Bach'
+  ,''
+  ,'jsbach@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 004 of 008 Antonio, Vivaldi, <empty string>, avivaldi@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Antonio'
+  ,'Vivaldi'
+  ,''
+  ,'avivaldi@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 005 of 008 Billy, Strayhorn, dr, bstrayhorn@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Billy'
+  ,'Strayhorn'
+  ,'Dr.'
+  ,'bstrayhorn@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 006 of 008 Duke, Ellington, <empty string>, dellington@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Duke'
+  ,'Ellington'
+  ,''
+  ,'dellington@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 007 of 008 Clara, Wieck, Dr., cwieck@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Clara'
+  ,'Wieck'
+  ,'Dr.'
+  ,'cwieck@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 008 of 008 Scott, Joplin, Dr., sjoplin@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Scott'
+  ,'Joplin'
+  ,'Dr.'
+  ,'sjoplin@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
