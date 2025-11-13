@@ -1,0 +1,42 @@
+-- SQL Server Instance: smg-sql01
+IF (@@SERVERNAME <> 'smg-dsdev05')
+BEGIN
+PRINT 'Invalid SQL Server Connection'
+RETURN
+END
+
+USE [CommitteePayroll];
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'PerPayPeriodBoardStatus' AND TABLE_SCHEMA = 'payroll_jvhold')
+   DROP TABLE [payroll_jvhold].[PerPayPeriodBoardStatus];
+GO
+/* -----------------------------------------------------------------------------------------------------------
+   Table Name  :  PerPayPeriodBoardStatus
+   Business Analyis:
+   Project/Process :   
+   Description     :  PerPayPeriodBoardStatus - I.e.  Has the Board's been sent/approved/Opened for this pay period.
+                        
+   Author          :   Philip Morrison
+   Create Date     :   11/10/2025 
+
+   ***********************************************************************************************************
+   **         Change History                                                                                **
+   ***********************************************************************************************************
+
+   Date       Version    Author             Description
+   --------   --------   -----------        ------------
+   11/10/2025  1.01.001   Philip Morrison    Created
+*/ -----------------------------------------------------------------------------------------------------------                                   
+
+CREATE TABLE [payroll_jvhold].[PerPayPeriodBoardStatus](
+
+    [PerPayPeriodBoardStatusID] [int] IDENTITY ( 1, 1 ) NOT NULL
+     ,[PayPeriodID] [int]
+     ,[BoardTypeID] [int]
+     ,[PerPayPeriodBoardStatusNameID] [int]
+     ,[StatusTimestamp] [datetime] 
+ CONSTRAINT [pk_payroll_jvholdPerPayPeriodBoardStatus] PRIMARY KEY CLUSTERED 
+(
+	[PerPayPeriodBoardStatusID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO

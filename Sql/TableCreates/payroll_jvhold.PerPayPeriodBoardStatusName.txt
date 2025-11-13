@@ -1,0 +1,112 @@
+-- SQL Server Instance: smg-sql01
+IF (@@SERVERNAME <> 'smg-dsdev05')
+BEGIN
+PRINT 'Invalid SQL Server Connection'
+RETURN
+END
+
+USE [CommitteePayroll];
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'PerPayPeriodBoardStatusName' AND TABLE_SCHEMA = 'payroll_jvhold')
+   DROP TABLE [payroll_jvhold].[PerPayPeriodBoardStatusName];
+GO
+/* -----------------------------------------------------------------------------------------------------------
+   Table Name  :  PerPayPeriodBoardStatusName
+   Business Analyis:
+   Project/Process :   
+   Description     :   Per-pay-Period Board Status Name.
+                        
+   Author          :   Philip Morrison
+   Create Date     :   11/10/2025 
+
+   ***********************************************************************************************************
+   **         Change History                                                                                **
+   ***********************************************************************************************************
+
+   Date       Version    Author             Description
+   --------   --------   -----------        ------------
+   11/10/2025  1.01.001   Philip Morrison    Created
+*/ -----------------------------------------------------------------------------------------------------------                                   
+
+CREATE TABLE [payroll_jvhold].[PerPayPeriodBoardStatusName](
+
+    [PerPayPeriodBoardStatusNameID] [int] IDENTITY ( 1, 1 ) NOT NULL
+     ,[StatusName] [varchar] (100) NOT NULL
+ CONSTRAINT [pk_payroll_jvholPerPayPeriodBoardStatusName] PRIMARY KEY CLUSTERED 
+(
+	[PerPayPeriodBoardStatusNameID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- STEP 001 of 003 - Open
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[PerPayPeriodBoardStatusName]
+(
+  [StatusName]
+)
+VALUES
+(
+  'Open'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 002 of 003 - Approved
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[PerPayPeriodBoardStatusName]
+(
+  [StatusName]
+)
+VALUES
+(
+  'Approved'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 003 of 003 - Sent and Closed Out
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[PerPayPeriodBoardStatusName]
+(
+  [StatusName]
+)
+VALUES
+(
+  'Sent and Closed Out'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+

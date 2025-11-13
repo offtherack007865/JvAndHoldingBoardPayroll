@@ -1,0 +1,45 @@
+-- SQL Server Instance: smg-sql01
+IF (@@SERVERNAME <> 'smg-dsdev05')
+BEGIN
+PRINT 'Invalid SQL Server Connection'
+RETURN
+END
+
+USE [CommitteePayroll];
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'TimeEntry' AND TABLE_SCHEMA = 'payroll_jvhold')
+   DROP TABLE [payroll_jvhold].[TimeEntry];
+GO
+/* -----------------------------------------------------------------------------------------------------------
+   Table Name  :  TimeEntry
+   Business Analyis:
+   Project/Process :   
+   Description     :  The Time Entry 
+                        
+   Author          :   Philip Morrison
+   Create Date     :   11/11/2025 
+
+   ***********************************************************************************************************
+   **         Change History                                                                                **
+   ***********************************************************************************************************
+
+   Date       Version    Author             Description
+   --------   --------   -----------        ------------
+   11/11/2025  1.01.001   Philip Morrison    Created
+*/ -----------------------------------------------------------------------------------------------------------                                   
+
+CREATE TABLE [payroll_jvhold].[TimeEntry](
+
+    [TimeEntryID] [int] IDENTITY ( 1, 1 ) NOT NULL
+     ,[PayPeriodID] [int] NOT NULL
+	 ,[BoardMemberAssignmentID] [int] NOT NULL
+     ,[BoardTypeID] [int] NOT NULL
+     ,[EntryDate] [datetime] NOT NULL
+     ,[Purpose] [varchar] (100) NOT NULL 
+     ,[TimeInHours] [decimal] (6 ,2) NOT NULL
+ CONSTRAINT [pk_payroll_jvholdTimeEntry] PRIMARY KEY CLUSTERED 
+(
+	[TimeEntryID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+

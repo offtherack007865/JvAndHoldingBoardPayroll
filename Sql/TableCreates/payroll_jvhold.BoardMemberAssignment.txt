@@ -1,0 +1,313 @@
+-- SQL Server Instance: smg-sql01
+IF (@@SERVERNAME <> 'smg-dsdev05')
+BEGIN
+PRINT 'Invalid SQL Server Connection'
+RETURN
+END
+
+USE [CommitteePayroll];
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'BoardMemberAssignment' AND TABLE_SCHEMA = 'payroll_jvhold')
+   DROP TABLE [payroll_jvhold].[BoardMemberAssignment];
+GO
+/* -----------------------------------------------------------------------------------------------------------
+   Table Name  :  BoardMemberContactInfo
+   Business Analyis:
+   Project/Process :   
+   Description     :  The Contact Info of Board Members assigned to the JV or the Holding board.
+                        
+   Author          :   Philip Morrison
+   Create Date     :   11/10/2025 
+
+   ***********************************************************************************************************
+   **         Change History                                                                                **
+   ***********************************************************************************************************
+
+   Date       Version    Author             Description
+   --------   --------   -----------        ------------
+   11/10/2025  1.01.001   Philip Morrison    Created
+*/ -----------------------------------------------------------------------------------------------------------                                   
+
+CREATE TABLE [payroll_jvhold].[BoardMemberAssignment](
+
+    [BoardMemberAssignmentID] [int] IDENTITY ( 1, 1 ) NOT NULL
+     ,[BoardMemberContactInfoID] [int] NOT NULL
+	 ,[PayRateForBoardPositionID] [int] NOT NULL
+     ,[TenureStartDate] [datetime] NOT NULL
+     ,[TenureEndDate] [datetime] NULL
+ CONSTRAINT [pk_payroll_jvholdBoardMemberAssignment] PRIMARY KEY CLUSTERED 
+(
+	[BoardMemberAssignmentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+-- STEP 001 of 008  Robert, Schumann, Dr., JV, Chairman, 180, 1/1/2025, 9/30/2025
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  1
+  ,1
+  ,'1/1/2025'
+  ,'9/30/2025'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 001 of 008  Robert, Schumann, Dr., JV, Chairman, 1/1/2025, 9/30/2025
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  1
+  ,1
+  ,'1/1/2025'
+  ,'9/30/2025'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 002 of 008 Amy, Beach, Dr., JV, Board Member, 1/1/2025, 9/30/2025
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  2
+  ,2
+  ,'1/1/2025'
+  ,'9/30/2025'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 003 of 008 Johann Sebastien, Bach, <empty string>, Holding, Chairman, 1/1/2025, 9/30/2025
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  3
+  ,3
+  ,'1/1/2025'
+  ,'9/30/2025'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 004 of 008 Antonio, Vivaldi, <empty string>, Holding, Board Member, 1/1/2025, 9/30/2025
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  4
+  ,4
+  ,'1/1/2025'
+  ,'9/30/2025'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 005 of 008  Billy, Strayhorn, dr, JV, Chairman, 10/1/2025, NULL
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  5
+  ,5
+  ,'10/1/2025'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 006 of 008 Duke, Ellington, <empty string>, JV, Board Member, 10/1/2025, NULL
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  6
+  ,6
+  ,'10/1/2025'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 007 of 008 Clara, Wieck, Dr., Holding, Chairman, 10/1/2025, NULL
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  7
+  ,7
+  ,'10/1/2025'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 008 of 008 Antonio, Vivaldi, <empty string>, Holding, Board Member, 10/1/2025, NULL
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  8
+  ,8
+  ,'10/1/2025'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
