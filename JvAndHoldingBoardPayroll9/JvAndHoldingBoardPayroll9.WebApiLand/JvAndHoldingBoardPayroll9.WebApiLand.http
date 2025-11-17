@@ -1,6 +1,0 @@
-@JvAndHoldingBoardPayroll9.WebApiLand_HostAddress = http://localhost:5284
-
-GET {{JvAndHoldingBoardPayroll9.WebApiLand_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

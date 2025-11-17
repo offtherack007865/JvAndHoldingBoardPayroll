@@ -43,22 +43,30 @@ DECLARE @KeyValueTable Table
 DECLARE @EmailBaseWebApiUrl         [varchar] (200) = ''
 DECLARE @EmailFromAddress           [varchar] (200) = ''
 
+-- Instance Declarations.
+DECLARE @IsOk [bit] = 0;
+DECLARE @MyCount [int] = 0;
+DECLARE @IndividualImportFilename [nvarchar] (3000) = '';
+DECLARE @TwentyPercentOfMasterRecordCount [int] = 0;
+DECLARE @RandomlyGeneratedRecordID [int] = 0;
+DECLARE @ExistsRandomlyGeneratedRecordID [int] = 0;
+DECLARE @RandomlyGeneratedRecordIDCountSoFar [int] = 0;
+
 -- Template Declarations
-DECLARE @Application                varchar(128) = 'Payroll' 
-DECLARE @Version                    varchar(25)  = '1.00.002'
+DECLARE @Application            varchar(128) = 'Payroll' 
+DECLARE @Version                varchar(25)  = '1.01.001'
 
-DECLARE @ProcessID                  int          = 212
-DECLARE @Process                    varchar(128) = 'JvHold'
+DECLARE @ProcessID              int          = 266
+DECLARE @Process                varchar(128) = 'JvHold'
 
-DECLARE @BatchOutID                 int
-DECLARE @BatchDescription           varchar(1000) = @@ServerName + '  - ' + @Version
-DECLARE @BatchDetailDescription     varchar(1000)
-DECLARE @BatchMessage               varchar(MAX)
-DECLARE @User                       varchar(128) = SUSER_NAME()
+DECLARE @BatchOutID             int
+DECLARE @BatchDescription       varchar(1000) = @@SERVERNAME + '.' + DB_NAME() + '.' + OBJECT_SCHEMA_NAME(@@ProcID) + '.' + OBJECT_NAME(@@ProcID) + '  - ' + @Version
+DECLARE @BatchDetailDescription varchar(1000)
+DECLARE @BatchMessage           varchar(MAX)
+DECLARE @User                   varchar(128) = SUSER_NAME()
 
-DECLARE @AnticipatedRecordCount     int 
-DECLARE @ActualRecordCount          int
-
+DECLARE @AnticipatedRecordCount int 
+DECLARE @ActualRecordCount      int
 
 SET NOCOUNT ON
 

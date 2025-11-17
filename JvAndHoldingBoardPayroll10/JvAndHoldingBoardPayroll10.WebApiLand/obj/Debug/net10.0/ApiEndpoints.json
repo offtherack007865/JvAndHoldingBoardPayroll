@@ -1,0 +1,74 @@
+[
+  {
+    "ContainingType": "JvAndHoldingBoardPayroll10.WebApiLand.Controllers.OpsController",
+    "Method": "qy_GetBoardMembersForInputtedDateAndBoardType",
+    "RelativePath": "api/Ops/qy_GetBoardMembersForInputtedDateAndBoardType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inputDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "inputBoardType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "JvAndHoldingBoardPayroll10.Data.Models.qy_GetBoardMembersForInputtedDateAndBoardTypeOutput",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "JvAndHoldingBoardPayroll10.WebApiLand.Controllers.OpsController",
+    "Method": "qy_GetJvAndHoldingBoardPayrollConfig",
+    "RelativePath": "api/Ops/qy_GetJvAndHoldingBoardPayrollConfig",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "JvAndHoldingBoardPayroll10.Data.Models.qy_GetJvAndHoldingBoardPayrollConfigOutput",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "JvAndHoldingBoardPayroll10.WebApiLand.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[JvAndHoldingBoardPayroll10.WebApiLand.WeatherForecast, JvAndHoldingBoardPayroll10.WebApiLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

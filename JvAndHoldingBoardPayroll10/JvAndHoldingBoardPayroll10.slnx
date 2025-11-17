@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="JvAndHoldingBoardPayroll10.Data/JvAndHoldingBoardPayroll10.Data.csproj" />
+  <Project Path="JvAndHoldingBoardPayroll10.WebApiLand/JvAndHoldingBoardPayroll10.WebApiLand.csproj" />
+</Solution>

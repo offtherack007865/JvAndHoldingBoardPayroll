@@ -1,1 +1,1 @@
-Scaffold-DbContext "Server=smg-dsdev05;Database=CommitteePayroll;TrustServerCertificate=True;Trusted_Connection=true;" -t payroll_jvhold.BoardMemberAssignment Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Project "JvAndHoldingBoardPayroll9.Data"
+Scaffold-DbContext "Server=smg-dsdev05;Database=CommitteePayroll;TrustServerCertificate=True;Trusted_Connection=true;" -t BoardMemberAssignment Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Project "JvAndHoldingBoardPayroll10.Data"
