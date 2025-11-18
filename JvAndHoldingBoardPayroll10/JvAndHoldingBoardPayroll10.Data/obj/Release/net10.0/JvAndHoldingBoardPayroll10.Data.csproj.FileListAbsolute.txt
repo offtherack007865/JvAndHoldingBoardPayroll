@@ -1,0 +1,13 @@
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\bin\Release\net10.0\JvAndHoldingBoardPayroll10.Data.deps.json
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\bin\Release\net10.0\JvAndHoldingBoardPayroll10.Data.dll
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\bin\Release\net10.0\JvAndHoldingBoardPayroll10.Data.pdb
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\JvAndHoldingBoardPayroll10.Data.csproj.AssemblyReference.cache
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\JvAndHoldingBoardPayroll10.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\JvAndHoldingBoardPayroll10.Data.AssemblyInfoInputs.cache
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\JvAndHoldingBoardPayroll10.Data.AssemblyInfo.cs
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\JvAndHoldingBoardPayroll10.Data.csproj.CoreCompileInputs.cache
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\JvAndHoldingBoardPayroll10.Data.sourcelink.json
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\JvAndHoldingBoardPayroll10.Data.dll
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\refint\JvAndHoldingBoardPayroll10.Data.dll
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\JvAndHoldingBoardPayroll10.Data.pdb
+D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.Data\obj\Release\net10.0\ref\JvAndHoldingBoardPayroll10.Data.dll

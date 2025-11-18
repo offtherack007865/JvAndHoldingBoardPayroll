@@ -126,7 +126,5 @@ namespace JvAndHoldingBoardPayroll10.WebApiLand.Controllers
             }
             return returnOutput;
         }
-
-
     }
 }

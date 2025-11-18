@@ -69,9 +69,15 @@ BEGIN TRY
       JOIN [CommitteePayroll].[payroll_jvhold].[BoardMemberContactInfo] contact
       ON contact.[BoardMemberContactInfoID] = assign.[BoardMemberContactInfoID]
       JOIN [CommitteePayroll].[payroll_jvhold].[PayRateForBoardPosition] payrate
-      ON payrate.[PayRateForBoardPositionID] = assign.[BoardMemberContactInfoID]
+      ON payrate.[PayRateForBoardPositionID] = assign.[PayRateForBoardPositionID]
       JOIN [CommitteePayroll].[payroll_jvhold].[BoardType] brdtype
-      ON brdtype.[BoardTypeID] = payrate.[BoardTypeID];
+      ON brdtype.[BoardTypeID] = payrate.[BoardTypeID]
+      WHERE brdtype.[BoardTypeName] = @inputBoardType
+      AND ((assign.[TenureEndDate] IS NOT NULL AND 
+              @inputDate BETWEEN assign.[TenureStartDate] AND 
+              assign.[TenureEndDate]) OR
+          (assign.[TenureEndDate] IS NULL AND 
+              @inputDate >= assign.[TenureStartDate]));
 	  
       -- Get the Board Members Active as of input date
       SELECT 
@@ -86,7 +92,7 @@ BEGIN TRY
       JOIN [CommitteePayroll].[payroll_jvhold].[BoardMemberContactInfo] contact
       ON contact.[BoardMemberContactInfoID] = assign.[BoardMemberContactInfoID]
       JOIN [CommitteePayroll].[payroll_jvhold].[PayRateForBoardPosition] payrate
-      ON payrate.[PayRateForBoardPositionID] = assign.[BoardMemberContactInfoID]
+      ON payrate.[PayRateForBoardPositionID] = assign.[PayRateForBoardPositionID]
       JOIN [CommitteePayroll].[payroll_jvhold].[BoardType] brdtype
       ON brdtype.[BoardTypeID] = payrate.[BoardTypeID]
       WHERE brdtype.[BoardTypeName] = @inputBoardType
@@ -94,7 +100,7 @@ BEGIN TRY
               @inputDate BETWEEN assign.[TenureStartDate] AND 
               assign.[TenureEndDate]) OR
           (assign.[TenureEndDate] IS NULL AND 
-              @inputDate >= assign.[TenureStartDate]))
+              @inputDate >= assign.[TenureStartDate]));
        
     SET @ActualRecordCount = @@ROWCOUNT
     EXEC Admin.Utilities.logs.di_Batch @BatchOutID OUTPUT,  @BatchOutID, 'DetailEnd', NULL, NULL, NULL, @AnticipatedRecordCount, @ActualRecordCount

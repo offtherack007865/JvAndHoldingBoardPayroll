@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JvAndHoldingBoardPayroll10.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3af29b5772b4cb83a39f1513dc2af1010b04b526")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d067d62e9764309f4214736d7074027697cc4f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("JvAndHoldingBoardPayroll10.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JvAndHoldingBoardPayroll10.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

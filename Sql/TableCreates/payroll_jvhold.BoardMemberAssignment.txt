@@ -42,7 +42,7 @@ CREATE TABLE [payroll_jvhold].[BoardMemberAssignment](
 GO
 
 
--- STEP 001 of 008  Robert, Schumann, Dr., JV, Chairman, 180, 1/1/2025, 9/30/2025
+-- STEP 001 of 008 001 of 008 JV, Chairman, $250, Bhavana, Vora, Dr., bvora@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -59,8 +59,8 @@ VALUES
 (
   1
   ,1
-  ,'1/1/2025'
-  ,'9/30/2025'
+  ,'1/1/2026'
+  ,NULL
 );  
 
 IF @@ERROR > 0 BEGIN
@@ -72,37 +72,8 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 001 of 008  Robert, Schumann, Dr., JV, Chairman, 1/1/2025, 9/30/2025
-SELECT 1;
--- 1 record 
 
-BEGIN TRANSACTION;
-
-INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
-(
-   [BoardMemberContactInfoID] 
-	,[PayRateForBoardPositionID]
-    ,[TenureStartDate]
-    ,[TenureEndDate]
-)
-VALUES
-(
-  1
-  ,1
-  ,'1/1/2025'
-  ,'9/30/2025'
-);  
-
-IF @@ERROR > 0 BEGIN
-  SELECT 0;
-  ROLLBACK TRANSACTION;
-END
-ELSE BEGIN
-  SELECT 1;
-  COMMIT TRANSACTION;
-END
-
--- STEP 002 of 008 Amy, Beach, Dr., JV, Board Member, 1/1/2025, 9/30/2025
+-- STEP 002 of 008 JV. Board Member, $200, Nick, Thornton, Dr., nthornton@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -119,8 +90,8 @@ VALUES
 (
   2
   ,2
-  ,'1/1/2025'
-  ,'9/30/2025'
+  ,'1/1/2026'
+  ,NULL
 );  
 
 IF @@ERROR > 0 BEGIN
@@ -132,7 +103,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 003 of 008 Johann Sebastien, Bach, <empty string>, Holding, Chairman, 1/1/2025, 9/30/2025
+-- STEP 003 of 008 JV. Board Member, $200, Jeff, Stevens, Dr., jstevens@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -148,9 +119,9 @@ INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
 VALUES
 (
   3
-  ,3
-  ,'1/1/2025'
-  ,'9/30/2025'
+  ,2
+  ,'1/1/2026'
+  ,NULL
 );  
 
 IF @@ERROR > 0 BEGIN
@@ -162,7 +133,157 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 004 of 008 Antonio, Vivaldi, <empty string>, Holding, Board Member, 1/1/2025, 9/30/2025
+-- STEP 004 of 008 JV. Board Member, $200, Aaron, Jones, Dr., atjones@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  4
+  ,2
+  ,'1/1/2026'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 005 of 008  JV. Board Member, $200, Ty, Kirby, Dr., tkirby@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  5
+  ,2
+  ,'1/1/2026'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 006 of 008 JV. Board Member, $200, Ketan, Hira, Dr., khira@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  6
+  ,2
+  ,'1/1/2026'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 007 of 008 Holding, Chairman, $250, Ty, Kirby, Dr., tkirby@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  5
+  ,3
+  ,'1/1/2026'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 008 of 008 Holding, Board Member, $200, Nick, Thornton, Dr., nthornton@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
+(
+   [BoardMemberContactInfoID] 
+	,[PayRateForBoardPositionID]
+    ,[TenureStartDate]
+    ,[TenureEndDate]
+)
+VALUES
+(
+  2
+  ,4
+  ,'1/1/2026'
+  ,NULL
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 009 of 008 Holding, Board Member, $200, Aaron, Jones, Dr., atjones@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -179,37 +300,7 @@ VALUES
 (
   4
   ,4
-  ,'1/1/2025'
-  ,'9/30/2025'
-);  
-
-IF @@ERROR > 0 BEGIN
-  SELECT 0;
-  ROLLBACK TRANSACTION;
-END
-ELSE BEGIN
-  SELECT 1;
-  COMMIT TRANSACTION;
-END
-
--- STEP 005 of 008  Billy, Strayhorn, dr, JV, Chairman, 10/1/2025, NULL
-SELECT 1;
--- 1 record 
-
-BEGIN TRANSACTION;
-
-INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
-(
-   [BoardMemberContactInfoID] 
-	,[PayRateForBoardPositionID]
-    ,[TenureStartDate]
-    ,[TenureEndDate]
-)
-VALUES
-(
-  5
-  ,5
-  ,'10/1/2025'
+  ,'1/1/2026'
   ,NULL
 );  
 
@@ -222,37 +313,8 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 006 of 008 Duke, Ellington, <empty string>, JV, Board Member, 10/1/2025, NULL
-SELECT 1;
--- 1 record 
 
-BEGIN TRANSACTION;
-
-INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
-(
-   [BoardMemberContactInfoID] 
-	,[PayRateForBoardPositionID]
-    ,[TenureStartDate]
-    ,[TenureEndDate]
-)
-VALUES
-(
-  6
-  ,6
-  ,'10/1/2025'
-  ,NULL
-);  
-
-IF @@ERROR > 0 BEGIN
-  SELECT 0;
-  ROLLBACK TRANSACTION;
-END
-ELSE BEGIN
-  SELECT 1;
-  COMMIT TRANSACTION;
-END
-
--- STEP 007 of 008 Clara, Wieck, Dr., Holding, Chairman, 10/1/2025, NULL
+-- STEP 010 of 008 Holding, Board Member, $200, Rodney, Sturgeon, Dr., rsturgeon@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -268,8 +330,8 @@ INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
 VALUES
 (
   7
-  ,7
-  ,'10/1/2025'
+  ,4
+  ,'1/1/2026'
   ,NULL
 );  
 
@@ -282,7 +344,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 008 of 008 Antonio, Vivaldi, <empty string>, Holding, Board Member, 10/1/2025, NULL
+-- STEP 011 of 008 Holding, Board Member, $200, Rick, Carter, Dr., rcarter@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -298,8 +360,8 @@ INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
 VALUES
 (
   8
-  ,8
-  ,'10/1/2025'
+  ,4
+  ,'1/1/2026'
   ,NULL
 );  
 

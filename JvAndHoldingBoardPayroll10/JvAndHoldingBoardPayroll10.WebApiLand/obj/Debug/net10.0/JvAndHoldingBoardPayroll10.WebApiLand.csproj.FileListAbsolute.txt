@@ -168,7 +168,6 @@ D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHolding
 D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.WebApiLand\obj\Debug\net10.0\staticwebassets.development.json
 D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.WebApiLand\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.WebApiLand\obj\Debug\net10.0\swae.build.ex.cache
-D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.WebApiLand\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.WebApiLand\obj\Debug\net10.0\JvAndHol.1A329884.Up2Date
 D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.WebApiLand\obj\Debug\net10.0\JvAndHoldingBoardPayroll10.WebApiLand.dll
 D:\source\repos\JvAndHoldingBoardPayroll\JvAndHoldingBoardPayroll10\JvAndHoldingBoardPayroll10.WebApiLand\obj\Debug\net10.0\refint\JvAndHoldingBoardPayroll10.WebApiLand.dll
