@@ -163,7 +163,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 005 of 008  JV. Board Member, $200, Ty, Kirby, Dr., tkirby@summithealthcare.com
+-- STEP 005 of 008  JV. Board Member, $200, Jaime, Oakley, Dr., joakley@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -178,7 +178,7 @@ INSERT INTO [payroll_jvhold].[BoardMemberAssignment]
 )
 VALUES
 (
-  5
+  9
   ,2
   ,'1/1/2026'
   ,NULL

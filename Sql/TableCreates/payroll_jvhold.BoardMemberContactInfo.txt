@@ -42,7 +42,7 @@ CREATE TABLE [payroll_jvhold].[BoardMemberContactInfo](
 GO
 
 
--- STEP 001 of 008 Bhavana, Vora, Dr., bvora@summithealthcare.com
+-- STEP 001 of 009 Bhavana, Vora, Dr., bvora@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -72,7 +72,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 002 of 008 Nick, Thornton, Dr., nthornton@summithealthcare.com
+-- STEP 002 of 009 Nick, Thornton, Dr., nthornton@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -102,7 +102,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 003 of 008 Jeff, Stevens, Dr., jstevens@summithealthcare.com
+-- STEP 003 of 009 Jeff, Stevens, Dr., jstevens@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -132,7 +132,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 004 of 008 Aaron, Jones, Dr., atjones@summithealthcare.com
+-- STEP 004 of 009 Aaron, Jones, Dr., atjones@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -162,7 +162,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 005 of 008 Ty, Kirby, Dr., tkirby@summithealthcare.com
+-- STEP 005 of 009 Ty, Kirby, Dr., tkirby@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -192,7 +192,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 006 of 008  Ketan, Hira, Dr., khira@summithealthcare.com
+-- STEP 006 of 009  Ketan, Hira, Dr., khira@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -222,7 +222,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 007 of 008 Rodney, Sturgeon, Dr., rsturgeon@summithealthcare.com
+-- STEP 007 of 009 Rodney, Sturgeon, Dr., rsturgeon@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -252,7 +252,7 @@ ELSE BEGIN
   COMMIT TRANSACTION;
 END
 
--- STEP 008 of 008 Rick, Carter, Dr., rcarter@summithealthcare.com
+-- STEP 008 of 009 Rick, Carter, Dr., rcarter@summithealthcare.com
 SELECT 1;
 -- 1 record 
 
@@ -271,6 +271,36 @@ VALUES
   ,'Carter'
   ,'Dr.'
   ,'rcarter@summithealthcare.com'
+);  
+
+IF @@ERROR > 0 BEGIN
+  SELECT 0;
+  ROLLBACK TRANSACTION;
+END
+ELSE BEGIN
+  SELECT 1;
+  COMMIT TRANSACTION;
+END
+
+-- STEP 009 of 009 Jaime, Oakley, Dr., joakley@summithealthcare.com
+SELECT 1;
+-- 1 record 
+
+BEGIN TRANSACTION;
+
+INSERT INTO [payroll_jvhold].[BoardMemberContactInfo]
+(
+  [FirstName]
+  ,[LastName]
+  ,[Degree]
+  ,[EmailAddress]
+)
+VALUES
+(
+  'Jaime'
+  ,'Oakley'
+  ,'Dr.'
+  ,'joakley@summithealthcare.com'
 );  
 
 IF @@ERROR > 0 BEGIN
