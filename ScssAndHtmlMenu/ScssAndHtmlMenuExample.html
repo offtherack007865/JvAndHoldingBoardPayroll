@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SCSS Menuing System</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+<!--
+Source - https://stackoverflow.com/a
+Posted by James
+Retrieved 2025-11-21, License - CC BY-SA 3.0
+-->
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+ul li{
+    position:relative;
+}
+
+#navbar > ul > li{
+    display:inline-block;
+    background-color: #ccc;
+}
+
+#navbar ul ul{
+    display:none;
+    position:absolute;
+    top:100%;
+    background-color:#fadde8;
+}
+
+#navbar ul li:hover > ul{
+    display:block;
+}
+
+#navbar ul ul ul{
+    top:0;
+    left:100%;
+    background-color:#71efd3;
+}
+
+</style>
+</head>
+<body>
+<!--
+Source - https://stackoverflow.com/a
+Posted by James
+Retrieved 2025-11-21, License - CC BY-SA 3.0
+-->
+
+<section id="navbar">
+    <ul>
+        <li><a href="#"> Food </a></li>
+        <li><a href="#"> Houseware 
+            <ul>
+                <li><a href="#"> Breakfast </a></li>
+                <li><a href="#"> Lunch </a></li>
+                <li><a href="#"> Dinner </a></li>
+                <li><a href="#"> Snacks </a>
+                    <ul>
+                        <li><a href="#">Orange</a></li>
+                        <li><a href="#">Banana</a></li>
+                        <li><a href="#">Apple</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </a></li>
+        <li><a href=#> Toys </a></li>
+    </ul>
+</section>
+</body>
+</html>
